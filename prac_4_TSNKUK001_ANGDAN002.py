@@ -34,3 +34,40 @@ delay = 0.5   #default delay is 500 ms = 0.5 s
 # define our clear function for clearing the console
 def clear():
     _ = system('clear')
+
+# function definition: threaded callback
+def callback1(reset): #resets timer and clears console
+    global start_time
+    start_time = time.time()
+    
+    clear()
+
+
+def callback2(frequency):
+    global delay
+    if delay == 2:
+            delay = 0.5
+    elif delay == 1:
+            delay = 2
+    elif delay == 0.5:
+            delay = 1
+
+def callback3(stop):
+    global go
+    if go == True:
+            go = False
+    else:
+            go = True
+
+
+def callback4(display):
+    global mylist
+    length = len(mylist)  #length of list
+        print("Time           Timer      Pot       Temp      Light")
+        if length > 4:
+            for i in range(5):
+                print(mylist[i])
+        else:
+            or j in range(length):
+                print(mylist[j])
+
