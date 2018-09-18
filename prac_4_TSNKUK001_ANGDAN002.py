@@ -49,3 +49,9 @@ def callback4(display):
     else:
         for j in range(length):
             print(mylist[j])
+
+# Under a rising-edge detection, regardless of current execution # callback function will be called
+GPIO.add_event_detect(reset, GPIO.RISING, callback=callback1, bouncetime=200)
+GPIO.add_event_detect(frequency, GPIO.RISING, callback=callback2, bouncetime=200)
+GPIO.add_event_detect(stop, GPIO.RISING, callback=callback3, bouncetime=200)
+GPIO.add_event_detect(display, GPIO.RISING, callback=callback4, bouncetime=200)
