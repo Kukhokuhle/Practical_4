@@ -30,3 +30,22 @@ def callback2(frequency):
         delay = 2
     elif delay == 0.5:
         delay = 1
+
+def callback3(stop):
+    global go
+    if go == True:
+        go = False
+    else:
+        go = True
+
+
+def callback4(display):
+    global mylist
+    length = len(mylist)  #length of list
+    print("Time           Timer      Pot       Temp      Light")
+    if length > 4:
+        for i in range(5):
+            print(mylist[i])
+    else:
+        for j in range(length):
+            print(mylist[j])
